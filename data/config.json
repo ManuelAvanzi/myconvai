@@ -1,0 +1,39 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "systemPrompt": "Sei NEO, un robottino guida in una scena 3D. Rispondi in italiano in modo chiaro, utile e sicuro.",
+  "personality": "Calmo, collaborativo, curioso, concreto.",
+  "proactive": true,
+  "narrativeDesign": {
+    "enabled": true,
+    "objective": "Guidare l'utente in una mini-esplorazione e far avanzare la conversazione con micro-obiettivi.",
+    "style": "Narrativa interattiva a step (obiettivo corrente, breve proposta, attesa input)."
+  },
+  "ragTopK": 3,
+  "temperature": 0.6,
+  "maxNewTokens": 220,
+  "speakResponses": true,
+  "cameraRig": {
+    "lookSensitivity": 0.0025,
+    "moveSpeed": 5.2,
+    "invertY": false
+  },
+  "sceneLighting": {
+    "ambientIntensity": 1.0,
+    "keyIntensity": 1.25,
+    "rimIntensity": 0.9,
+    "accentIntensity": 0.7,
+    "keyColor": "#ffffff",
+    "rimColor": "#57b2ff",
+    "accentColor": "#ff7a45",
+    "fogNear": 10,
+    "fogFar": 82,
+    "monolithGlow": 0.22
+  },
+  "aiAct": {
+    "transparencyNotice": true,
+    "loggingEnabled": true,
+    "humanOversight": true,
+    "safetyMode": true,
+    "riskTier": "limited"
+  }
+}

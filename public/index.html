@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyConvai WebXR</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene"></canvas>
+
+      <div id="topBar" class="panel">
+        <div>
+          <strong>MyConvai | Three.js WebXR</strong>
+          <div class="small">WASD / frecce per muoverti, trascina col mouse per ruotare la visuale.</div>
+        </div>
+        <div class="small topRight">
+          <div id="modelInfo">Modello: ...</div>
+          <div class="topButtons">
+            <button id="resetCameraBtn" type="button">Reset Camera</button>
+          </div>
+          <div><a href="/dashboard.html">Apri Dashboard AI</a></div>
+        </div>
+      </div>
+
+      <div id="chatPanel" class="panel">
+        <div id="messages"></div>
+        <div id="inputRow">
+          <input id="chatInput" type="text" placeholder="Scrivi al robottino..." />
+          <button id="voiceBtn" title="Parla al microfono">Voce</button>
+          <button id="sendBtn" class="primary">Invia</button>
+        </div>
+        <div style="padding: 0 10px 10px 10px; font-size: 12px; opacity: 0.85">
+          In VR puoi usare il trigger controller per avviare la voce (se supportata).
+        </div>
+      </div>
+
+      <div id="mobilePad" class="panel">
+        <button class="padBtn" data-move="forward">UP</button>
+        <button class="padBtn" data-move="none">.</button>
+        <button class="padBtn" data-move="right">DX</button>
+        <button class="padBtn" data-move="left">SX</button>
+        <button class="padBtn" data-move="backward">DOWN</button>
+        <button class="padBtn" data-move="none2">.</button>
+      </div>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

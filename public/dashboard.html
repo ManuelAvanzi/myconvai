@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyConvai Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="dashboardWrap">
+      <div class="dashboard panel">
+        <div class="dashHeader">
+          <h1 class="dashTitle">Dashboard AI | MyConvai</h1>
+          <p class="dashSubtitle">
+            Configura modello, personalita, narrative design, RAG e ora anche camera + illuminazione della scena 3D.
+          </p>
+        </div>
+
+        <div class="dashBody">
+          <section class="dashCard">
+            <h3>Modello</h3>
+            <div class="grid">
+              <div class="field">
+                <label for="model">Model ID Hugging Face</label>
+                <input id="model" type="text" />
+              </div>
+              <div class="field">
+                <label for="temperature">Temperature</label>
+                <input id="temperature" type="number" step="0.1" />
+              </div>
+            </div>
+            <div class="grid">
+              <div class="field">
+                <label for="maxNewTokens">Max New Tokens</label>
+                <input id="maxNewTokens" type="number" />
+              </div>
+              <div class="field">
+                <label for="ragTopK">RAG Top K</label>
+                <input id="ragTopK" type="number" />
+              </div>
+            </div>
+          </section>
+
+          <section class="dashCard">
+            <h3>Prompt E Stile</h3>
+            <div class="field">
+              <label for="systemPrompt">System Prompt</label>
+              <textarea id="systemPrompt" rows="4"></textarea>
+            </div>
+            <div class="field">
+              <label for="personality">Personalita</label>
+              <textarea id="personality" rows="3"></textarea>
+            </div>
+            <div class="grid">
+              <div class="field">
+                <label for="narrativeObjective">Narrative Design - Objective</label>
+                <textarea id="narrativeObjective" rows="3"></textarea>
+              </div>
+              <div class="field">
+                <label for="narrativeStyle">Narrative Design - Style</label>
+                <textarea id="narrativeStyle" rows="3"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="dashCard">
+            <h3>Comportamento</h3>
+            <div class="switches">
+              <label><input id="proactive" type="checkbox" /> Proattiva</label>
+              <label><input id="narrativeEnabled" type="checkbox" /> Narrative Design attivo</label>
+              <label><input id="speakResponses" type="checkbox" /> Risposte vocali (TTS browser)</label>
+              <label><input id="loggingEnabled" type="checkbox" /> Log locale conversazioni</label>
+              <label><input id="safetyMode" type="checkbox" /> Safety mode</label>
+              <label><input id="humanOversight" type="checkbox" /> Human oversight</label>
+            </div>
+          </section>
+
+          <section class="dashCard">
+            <h3>Camera Controls</h3>
+            <div class="grid">
+              <div class="field">
+                <label for="lookSensitivity">Sensibilita Rotazione Mouse</label>
+                <div class="rangeField">
+                  <input id="lookSensitivity" type="range" min="0.001" max="0.01" step="0.0005" />
+                  <input id="lookSensitivityValue" type="number" min="0.001" max="0.01" step="0.0005" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="moveSpeed">Velocita Movimento</label>
+                <div class="rangeField">
+                  <input id="moveSpeed" type="range" min="2" max="12" step="0.1" />
+                  <input id="moveSpeedValue" type="number" min="2" max="12" step="0.1" />
+                </div>
+              </div>
+            </div>
+            <div class="switches">
+              <label><input id="invertY" type="checkbox" /> Inverti asse Y</label>
+            </div>
+          </section>
+
+          <section class="dashCard">
+            <h3>Illuminazione Scena</h3>
+            <div class="grid">
+              <div class="field">
+                <label for="ambientIntensity">Ambient Intensity</label>
+                <input id="ambientIntensity" type="number" step="0.05" min="0" max="4" />
+              </div>
+              <div class="field">
+                <label for="keyIntensity">Key Intensity</label>
+                <input id="keyIntensity" type="number" step="0.05" min="0" max="4" />
+              </div>
+            </div>
+            <div class="grid">
+              <div class="field">
+                <label for="rimIntensity">Rim Intensity</label>
+                <input id="rimIntensity" type="number" step="0.05" min="0" max="4" />
+              </div>
+              <div class="field">
+                <label for="accentIntensity">Accent Intensity</label>
+                <input id="accentIntensity" type="number" step="0.05" min="0" max="4" />
+              </div>
+            </div>
+            <div class="grid">
+              <div class="field">
+                <label for="keyColor">Key Color</label>
+                <input id="keyColor" type="color" />
+              </div>
+              <div class="field">
+                <label for="rimColor">Rim Color</label>
+                <input id="rimColor" type="color" />
+              </div>
+            </div>
+            <div class="grid">
+              <div class="field">
+                <label for="accentColor">Accent Color</label>
+                <input id="accentColor" type="color" />
+              </div>
+              <div class="field">
+                <label for="monolithGlow">Monolith Glow Opacity</label>
+                <input id="monolithGlow" type="number" step="0.01" min="0" max="1" />
+              </div>
+            </div>
+            <div class="grid">
+              <div class="field">
+                <label for="fogNear">Fog Near</label>
+                <input id="fogNear" type="number" step="1" min="1" max="200" />
+              </div>
+              <div class="field">
+                <label for="fogFar">Fog Far</label>
+                <input id="fogFar" type="number" step="1" min="10" max="300" />
+              </div>
+            </div>
+          </section>
+
+          <section class="dashCard">
+            <h3>Knowledge Base RAG</h3>
+            <div class="field">
+              <label for="ragDocs">
+                Usa separatore <kbd>---</kbd> tra documenti e titolo con <kbd>Titolo:</kbd>
+              </label>
+              <textarea id="ragDocs" rows="12"></textarea>
+            </div>
+          </section>
+        </div>
+
+        <div class="dashActions">
+          <button id="saveBtn" class="primary">Salva Configurazione</button>
+          <button id="reloadBtn">Ricarica</button>
+          <a href="/">Torna alla scena</a>
+        </div>
+        <div id="status"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/dashboard.js"></script>
+  </body>
+</html>

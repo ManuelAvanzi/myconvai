@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: myconvai-webxr
+    env: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: HF_TOKEN
+        sync: false
+      - key: ADMIN_USER
+        sync: false
+      - key: ADMIN_PASS
+        sync: false
+      - key: CHAT_RATE_LIMIT_PER_MIN
+        value: 30
+      - key: ADMIN_RATE_LIMIT_PER_MIN
+        value: 120

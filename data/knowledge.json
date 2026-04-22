@@ -1,0 +1,14 @@
+{
+  "documents": [
+    {
+      "id": "doc-1",
+      "title": "Benvenuto",
+      "content": "Questo progetto mostra un NPC robottino in Three.js/WebXR. L'utente puo parlare via voce in visore o via chat su desktop e smartphone."
+    },
+    {
+      "id": "doc-2",
+      "title": "Narrative Design",
+      "content": "Lo stile narrative design combina obiettivi conversazionali, decisioni e trigger invece di un dialog tree rigido."
+    }
+  ]
+}
