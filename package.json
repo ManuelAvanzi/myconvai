@@ -5,6 +5,11 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "cf:login": "wrangler login",
+    "cf:kv:create": "wrangler kv namespace create MYCONVAI_STORE",
+    "cf:secret:hf": "wrangler secret put HF_TOKEN",
+    "cf:secret:admin": "wrangler secret put ADMIN_PASS",
+    "cf:deploy": "wrangler deploy"
   }
 }

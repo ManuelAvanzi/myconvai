@@ -46,6 +46,25 @@ Deploy one-click da repo GitHub:
 - Repository pronto con `railway.json`
 - In Railway imposta le stesse variabili ambiente.
 
+## Deploy Gratis Con Cloudflare (Frontend + API)
+
+Questa opzione pubblica sia la scena che il backend `/api/*` senza Render.
+
+1. Installa Wrangler in locale:
+   - `npm i -D wrangler`
+2. Login Cloudflare:
+   - `npm run cf:login`
+3. Crea KV namespace:
+   - `npm run cf:kv:create`
+   - copia l'`id` restituito e mettilo in `wrangler.jsonc` al posto di `REPLACE_WITH_KV_NAMESPACE_ID`
+4. Imposta secret:
+   - `npm run cf:secret:hf` (inserisci HF_TOKEN)
+   - `npm run cf:secret:admin` (inserisci ADMIN_PASS)
+5. Deploy:
+   - `npm run cf:deploy`
+
+Puoi cambiare `ADMIN_USER` in `wrangler.jsonc` se non vuoi usare `admin`.
+
 ## Note WebXR
 
 - In locale puoi testare da desktop.
