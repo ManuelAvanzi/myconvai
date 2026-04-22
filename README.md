@@ -37,6 +37,10 @@ Applicazione WebXR con:
   - `ADMIN_USER`
   - `ADMIN_PASS`
 
+Deploy one-click da repo GitHub:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ManuelAvanzi/myconvai)
+
 ### Railway
 
 - Repository pronto con `railway.json`
