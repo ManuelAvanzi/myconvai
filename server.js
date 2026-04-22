@@ -358,6 +358,10 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
+    if (req.method === 'GET' && pathname === '/healthz') {
+      return sendJson(res, 200, { ok: true, ts: new Date().toISOString() });
+    }
+
     if (req.method === 'PUT' && pathname === '/api/config') {
       if (!checkRateLimit(req, res, 'admin', ENV.ADMIN_RATE_LIMIT_PER_MIN)) return;
       const body = await parseBody(req);
